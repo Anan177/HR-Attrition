@@ -27,21 +27,25 @@ Contoh beberapa upaya yang dapat dilakukan untuk mengurangi attrition rate adala
 
 Sumber data: https://github.com/dicodingacademy/dicoding_dataset/blob/main/employee/employee_data.csv
 
-Menjalankan proses prediksi:
+Setup Environtment:
 
-Dengan asumsi bahwa dataset mempunyai struktur dan fitur sesuai dengan dataset sekarang, serta sudah dibersihkan
-
+Sebelum menjalankan skrip Python, pastikan Anda memiliki lingkungan yang sesuai dengan dependensi yang diperlukan. Langkah-langkah setup environment dapat dilakukan sebagai berikut:
+1. Instalasi Python: Pastikan Anda telah menginstal Python di komputer Anda. Anda bisa mengunduhnya dari situs resmi Python dan mengikuti petunjuk instalasinya.
+2. Instalasi Package: Instal paket-paket yang diperlukan dengan menjalankan perintah berikut di terminal atau command prompt:
 ```
-import python
-
-new_data = pd.read_csv('new_data.csv')
-
-X_new = python.preprocess_data(new_data)
-
-prediction_logistic, prediction_svm, prediction_random_forest = python.predict_with_models(X_new)
+pip install pandas scikit-learn joblib
 ```
 
+Menjalankan skrip:
+1. Pastikan dataset mempunyai struktur dan fitur sesuai dengan dataset sekarang, serta sudah dibersihkan (tanpa missing value).
+2. Anda dapat menjalankan skrip Python.py dengan menggunakan IDE seperti PyCharm atau VSCode, Kemudian jalankan skrip tersebut dengan menekan tombol "Run" atau "Execute"
+3. Masukan direktori kerja anda (contoh: C:/Users/anan/mahir/New_folder)
+4. Masukan nama dataset yang akan diprediksi label Attrition nya (contoh: employee_data.csv)
+5. File hasil akan langsung tersimpan di direktor dengan nama hasil_prediksi.csv
 
+Hal yang perlu diperhatikan:
+1. Pastikan direktori sudah sesuai dengan lokasi model (.joblib) dan scaler (scaler.pkl)
+2. Pastikan saat memasukan nama dataset menggunakan format akhir (.csv), serta dataset tersebut sudah ada dalam direktori
 
 ## Business Dashboard
 
@@ -100,10 +104,10 @@ Berikan beberapa rekomendasi action items yang harus dilakukan perusahaan guna m
 - action item 1
     Melihat pola utama attrition di perusahaan yang mana terbanyak ada pada usia cukup muda, monthly income rendah, dan total working years rendah. Maka direkomendasikan untuk melakukan aksi yang difokuskan karyawan muda/pengalaman rendah. Hal ini dapat berupa penawaran program peluang pertumbuhan karir, insentif/bonus, pengembangan karir, pengaturan kerja yang fleksibel, pekerjaan yang berorientasi pada tujuan, dan budaya perusahaan yang ramah karyawan baru.
 - action item 2
-    Terkait JobRole tertentu yang lebih tinggi dari pada yang lainnya, dapat dilakukan aksi tambahan berupa peningkatan Job satisfaction dan meningkatkan budaya purpose-driven work. Selain itu, perlunya penelusuran lebih dalam terutama pada Sales Representative dan Human Resource yang memiliki jumlah total karyawan terendah menggunakan variabel selain yang ada pada dataset, dikarenakan hasil analisis satisfaction, monthlyincome, dan age belum memberikan informasi konkret.
+    Terkait JobRole tertentu yang lebih tinggi dari pada yang lainnya, dapat dilakukan aksi tambahan berupa peningkatan Job satisfaction dan meningkatkan budaya purpose-driven work, serta penelusuran lebih dalam terutama pada Sales Representative dan Human Resource yang memiliki jumlah total karyawan terendah menggunakan variabel selain yang ada pada dataset, dikarenakan hasil analisis satisfaction, monthlyincome, dan age belum memberikan informasi konkret.
 - action item 3
-    Kebanyakan karyawan attrition yang berada pada status single, sehingga program khusus untuk menarik perhatian karyawan single seperti bantuan pernikahan mungkin dapat membantu menurunkan tingkat attrition
+    Kebanyakan karyawan attrition berada pada status single, serta berada di 5 JobRole dengan attrition rate tertinggi, sehingga program khusus untuk menarik perhatian karyawan single seperti bantuan pernikahan mungkin dapat membantu menurunkan tingkat attrition.
 - action item 4
     Berkaitan dengan attrition yang lebih tinggi pada karyawan yang sering melakukan perjalanan. Dapat dilakukan aksi seperti penyesuaian/pemberian bonus, peningkatan tarif per jam/harian/ bulanan untuk para karyawan yang bepergian, atau bisa dengan pembagian schedule karyawan yang berpergian, sehingga tidak berfokus pada beberapa karyawan saja.
 - action item 5
-    Berkaitan dengan pemanfaatan model untuk memprediksi mana karyawan yang beresiko meninggalkan perusahaan, dapat menggunakan model yang telah dibuat akan tetapi akan lebih baik jika dikembangkan lebih jauh, serta menggunakan dataset yang lebih baik (tanpa adanya missing value)
+    Berkaitan dengan pemanfaatan model untuk memprediksi mana karyawan yang beresiko meninggalkan perusahaan, dapat menggunakan model yang telah dibuat, tetapi akan lebih baik jika dikembangkan lebih jauh dan menggunakan dataset yang lebih baik (tanpa adanya missing value).
